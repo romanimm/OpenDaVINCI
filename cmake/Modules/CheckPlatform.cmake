@@ -43,6 +43,9 @@ FIND_PACKAGE (LibRT)
 ###########################################################################
 # Find and configure OpenCV.
 SET(OpenCV_DIR "/usr")
+IF("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+    SET(OpenCV_DIR "/usr/local")
+ENDIF()
 FIND_PACKAGE (OpenCV)
 
 ###########################################################################

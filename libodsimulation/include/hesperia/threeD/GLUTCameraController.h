@@ -20,8 +20,13 @@
 #ifndef HESPERIA_THREED_GLUTCAMERACONTROLLER_H_
 #define HESPERIA_THREED_GLUTCAMERACONTROLLER_H_
 
-#include <GL/gl.h>
-#include <GL/glut.h>
+#ifdef __APPLE__
+    #include <OpenGL/gl.h>
+    #include <GLUT/glut.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glut.h>
+#endif
 
 #include "hesperia/threeD/Camera.h"
 

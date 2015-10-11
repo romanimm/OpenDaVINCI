@@ -22,8 +22,14 @@
 #include <windows.h>
 #endif
 
-#include <GL/gl.h>
-#include <GL/glu.h>
+#ifdef __APPLE__
+    #include <OpenGL/gl.h>
+    #include <OpenGL/glu.h>
+    #include <GLUT/glut.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glu.h>
+#endif
 
 // Under Win32, GL_BGR is missing.
 #ifdef WIN32

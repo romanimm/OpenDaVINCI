@@ -21,8 +21,13 @@
 
 #include <iostream>
 
-#include <GL/gl.h>
-#include <GL/glut.h>
+#ifdef __APPLE__
+    #include <OpenGL/gl.h>
+    #include <GLUT/glut.h>
+#else
+    #include <GL/gl.h>
+    #include <GL/glut.h>
+#endif
 
 #include <opencv/highgui.h>
 #include <opencv/cxcore.h>

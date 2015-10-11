@@ -54,6 +54,9 @@ FIND_PACKAGE (AutomotiveData REQUIRED)
 ###########################################################################
 # Find OpenCV.
 SET(OpenCV_DIR "/usr")
+IF("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+    SET(OpenCV_DIR "/usr/local")
+ENDIF()
 FIND_PACKAGE (OpenCV REQUIRED)
 
 ###########################################################################
